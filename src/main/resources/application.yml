@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:mysql://rm-bp1re43f5ip48y5nmeo.mysql.rds.aliyuncs.com/identity
+    username: localtest
+    password: 19900822
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    #  ����Դ��������
+    initialSize: 1
+    minIdle: 1
+    maxActive: 5
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validaionQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 5
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true,druid.stat.slowSqlMills=2000
