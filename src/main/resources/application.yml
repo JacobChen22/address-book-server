@@ -5,7 +5,6 @@ spring:
     password: 19900822
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    #  ����Դ��������
     initialSize: 1
     minIdle: 1
     maxActive: 5

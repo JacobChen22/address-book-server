@@ -3,6 +3,8 @@ package com.cwj.identity.mapper;
 import com.cwj.identity.model.Organization;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author cwj
  */
@@ -19,4 +21,8 @@ public interface OrganizationMapper {
     int updateByPrimaryKeySelective(Organization org);
 
     int updateByPrimaryKey(Organization org);
+
+    List<Organization> selectAll();
+
+    List<Organization> getChildByParentId(String parentId);
 }

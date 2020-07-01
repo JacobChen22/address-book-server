@@ -11,12 +11,24 @@
     <sql id="Base_Column_List">
     org_id, `name`, parent_id, org_path_id, path_name
   </sql>
+    <select id="selectAll" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from org
+    </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from org
         where org_id = #{orgId,jdbcType=VARCHAR}
     </select>
+    <select id="getChildByParentId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from org
+        where parent_id = #{parentId}
+    </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from org
     where org_id = #{orgId,jdbcType=VARCHAR}
