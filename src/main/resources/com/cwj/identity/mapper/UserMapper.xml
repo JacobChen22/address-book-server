@@ -10,10 +10,20 @@
     <sql id="Base_Column_List">
     user_id, `name`, org_id, `position`
   </sql>
-    <select id="selectAll" resultMap="BaseResultMap">
+    <select id="selectByOrgId" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from user
+        where org_id = #{orgId}
+    </select>
+    <select id="selectUserByKeyWord" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where
+        name like concat('%',#{keyWord},'%')
+        or
+        user_id like concat('%',#{keyWord},'%')
     </select>
     <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select

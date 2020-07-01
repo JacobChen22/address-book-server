@@ -18,11 +18,6 @@ public class OrganizationServiceImpl implements OrganizationService {
     private OrganizationMapper organizationMapper;
 
     @Override
-    public List<Organization> findAll() {
-        return organizationMapper.selectAll();
-    }
-
-    @Override
     public List<Organization> getChild(String parentId) {
         return organizationMapper.getChildByParentId(parentId);
     }

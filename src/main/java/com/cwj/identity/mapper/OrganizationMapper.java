@@ -22,7 +22,5 @@ public interface OrganizationMapper {
 
     int updateByPrimaryKey(Organization org);
 
-    List<Organization> selectAll();
-
     List<Organization> getChildByParentId(String parentId);
 }

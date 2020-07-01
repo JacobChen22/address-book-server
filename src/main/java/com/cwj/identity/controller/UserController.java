@@ -3,9 +3,7 @@ package com.cwj.identity.controller;
 import com.cwj.identity.model.User;
 import com.cwj.identity.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,8 +21,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/all")
-    public List<User> findAll() {
-        return userService.findAll();
+    @GetMapping("/orgId/{orgId}")
+    public List<User> findUserByOrgId(@PathVariable("orgId") String orgId) {
+        return userService.findUserByOrgId(orgId);
     }
+
+    @GetMapping("/search")
+    public List<User> findUserByKeyWord(@RequestParam("keyWord") String keyWord) {
+        return userService.findUserByKeyWord(keyWord);
+    }
+
 }

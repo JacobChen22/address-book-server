@@ -22,8 +22,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> findAll() {
-        return userMapper.selectAll();
+    public List<User> findUserByOrgId(String orgId) {
+        return userMapper.selectByOrgId(orgId);
+    }
+
+    @Override
+    public List<User> findUserByKeyWord(String keyWord) {
+        return userMapper.selectUserByKeyWord(keyWord);
     }
 
 }

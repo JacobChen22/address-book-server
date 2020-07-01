@@ -22,5 +22,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User user);
 
-    List<User> selectAll();
+    List<User> selectByOrgId(String orgId);
+
+    List<User> selectUserByKeyWord(String keyWord);
 }

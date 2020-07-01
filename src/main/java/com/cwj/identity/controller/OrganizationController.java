@@ -24,11 +24,6 @@ public class OrganizationController {
         this.organizationService = organizationService;
     }
 
-    @GetMapping("/all")
-    public List<Organization> findAll() {
-        return organizationService.findAll();
-    }
-
     @GetMapping("/child/{parentId}")
     public List<Organization> getChild(@PathVariable("parentId") String parentId) {
         return organizationService.getChild(parentId);

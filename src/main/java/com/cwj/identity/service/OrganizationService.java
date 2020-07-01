@@ -9,7 +9,5 @@ import java.util.List;
  */
 public interface OrganizationService {
 
-    List<Organization> findAll();
-
     List<Organization> getChild(String parentId);
 }

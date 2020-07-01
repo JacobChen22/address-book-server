@@ -9,6 +9,7 @@ import java.util.List;
  */
 public interface UserService {
 
-    List<User> findAll();
+    List<User> findUserByOrgId(String orgId);
 
+    List<User> findUserByKeyWord(String keyWord);
 }
