@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/search")
-    public List<User> findUserByKeyWord(@RequestParam("keyWord") String keyWord) {
+    public List<User> findUserByKeyWord(@RequestParam(value = "keyWord", required = false) String keyWord) {
         return userService.findUserByKeyWord(keyWord);
     }
 

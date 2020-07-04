@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author cwj
@@ -28,7 +29,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> findUserByKeyWord(String keyWord) {
-        return userMapper.selectUserByKeyWord(keyWord);
+        String searchKey = Optional.ofNullable(keyWord).orElse("");
+        return userMapper.selectUserByKeyWord(searchKey);
     }
 
 }
