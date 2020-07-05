@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: identity-server
   datasource:
     url: jdbc:mysql://rm-bp1re43f5ip48y5nmeo.mysql.rds.aliyuncs.com/identity
     username: localtest
@@ -20,3 +22,9 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 5
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true,druid.stat.slowSqlMills=2000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8081/eureka/
+server:
+  port: 8085
