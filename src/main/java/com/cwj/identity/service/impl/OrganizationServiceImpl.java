@@ -3,7 +3,6 @@ package com.cwj.identity.service.impl;
 import com.cwj.identity.mapper.OrganizationMapper;
 import com.cwj.identity.model.Organization;
 import com.cwj.identity.service.OrganizationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +13,11 @@ import java.util.List;
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
 
-    @Autowired
-    private OrganizationMapper organizationMapper;
+    private final OrganizationMapper organizationMapper;
+
+    public OrganizationServiceImpl(OrganizationMapper organizationMapper) {
+        this.organizationMapper = organizationMapper;
+    }
 
     @Override
     public List<Organization> getChild(String parentId) {
